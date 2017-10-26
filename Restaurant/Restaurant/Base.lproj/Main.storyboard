@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="212" id="oIJ-Jc-V2N" customClass="RestaurantTableViewCell" customModule="Restaurant" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantCell" rowHeight="212" id="oIJ-Jc-V2N" customClass="RestaurantTableViewCell" customModule="Restaurant" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="212"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oIJ-Jc-V2N" id="2Tc-in-sdg">
@@ -35,16 +36,19 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="eIv-wW-hyC">
                                             <rect key="frame" x="8" y="8" width="188" height="169"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-ea-ykH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="128"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mcDonalds" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-ea-ykH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="110" id="ZJK-gt-YjO"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxJ-Xd-htV">
-                                                    <rect key="frame" x="0.0" y="128" width="45" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxJ-Xd-htV">
+                                                    <rect key="frame" x="0.0" y="110" width="45" height="38.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-f4-qOh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-f4-qOh">
                                                     <rect key="frame" x="0.0" y="148.5" width="37.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -60,6 +64,9 @@
                                         <constraint firstAttribute="trailing" secondItem="eIv-wW-hyC" secondAttribute="trailing" constant="179" id="idS-be-2I8"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="snw-BU-VmQ" kind="show" id="5Vt-Qa-GZp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -72,6 +79,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVE-qh-4r1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="592.79999999999995" y="112.89355322338831"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="u4Y-Am-90N">
+            <objects>
+                <viewController id="snw-BU-VmQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7h4-2e-cZw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hsq-vv-d3C"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5w-AB-M9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dlr-zB-3c4">
@@ -92,4 +114,7 @@
             <point key="canvasLocation" x="-263" y="113"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mcDonalds" width="400" height="400"/>
+    </resources>
 </document>
