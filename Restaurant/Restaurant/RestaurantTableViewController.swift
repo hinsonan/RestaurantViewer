@@ -8,8 +8,9 @@
 
 import UIKit
 
-class RestaurantTableViewController: UITableViewController {
 
+class RestaurantTableViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
