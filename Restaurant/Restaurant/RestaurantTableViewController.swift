@@ -35,7 +35,7 @@ class RestaurantTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return Data.sampleData.count
     }
 
     
@@ -43,7 +43,13 @@ class RestaurantTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath)
 
         // Configure the cell...
-
+        
+        //makes the cell take data from the data class``
+        if let restCell = cell as? RestaurantTableViewCell{
+            restCell.restName.text = Data.sampleData[0].restuarantName
+            restCell.restType.text = Data.sampleData[0].restuarantType
+            restCell.restImage.image = UIImage(named: Data.sampleData[0].restuarantImage!)
+        }
         return cell
     }
     

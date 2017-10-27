@@ -10,10 +10,10 @@ import Foundation
 
 class RestaurantModel{
     //makes all the attributes a restaurant would have
-    var restuarantName: String = ""
-    var restuarantType: String = ""
+    var restuarantName: String?
+    var restuarantType: String?
     var restuarantImage: String?
-    var restuarantBodyText: String = ""
+    var restuarantBodyText: String?
     
     init (restuarantName: String, restuarantType: String, restuarantBodyText: String){
         self.restuarantName = restuarantName
