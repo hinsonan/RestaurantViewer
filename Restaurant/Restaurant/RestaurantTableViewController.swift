@@ -46,9 +46,10 @@ class RestaurantTableViewController: UITableViewController {
         
         //makes the cell take data from the data class``
         if let restCell = cell as? RestaurantTableViewCell{
-            restCell.restName.text = Data.sampleData[0].restuarantName
-            restCell.restType.text = Data.sampleData[0].restuarantType
-            restCell.restImage.image = UIImage(named: Data.sampleData[0].restuarantImage!)
+            //you have to use indexPath to get the correct data for the row
+            restCell.restName.text = Data.sampleData[indexPath.row].restuarantName
+            restCell.restType.text = Data.sampleData[indexPath.row].restuarantType
+            restCell.restImage.image = UIImage(named: Data.sampleData[indexPath.row].restuarantImage!)
         }
         return cell
     }
