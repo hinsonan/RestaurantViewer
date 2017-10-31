@@ -68,7 +68,7 @@
                                     <outlet property="restImage" destination="XTa-ea-ykH" id="4Io-af-W3y"/>
                                     <outlet property="restName" destination="ZxJ-Xd-htV" id="yVS-m5-bY0"/>
                                     <outlet property="restType" destination="aZ3-f4-qOh" id="sVy-RC-LBN"/>
-                                    <segue destination="snw-BU-VmQ" kind="show" id="5Vt-Qa-GZp"/>
+                                    <segue destination="snw-BU-VmQ" kind="show" identifier="restaurantSegue" id="5Vt-Qa-GZp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -83,20 +83,57 @@
             </objects>
             <point key="canvasLocation" x="592.79999999999995" y="112.89355322338831"/>
         </scene>
-        <!--View Controller-->
+        <!--Restaurant View Controller-->
         <scene sceneID="u4Y-Am-90N">
             <objects>
-                <viewController id="snw-BU-VmQ" sceneMemberID="viewController">
+                <viewController id="snw-BU-VmQ" customClass="RestaurantViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7h4-2e-cZw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kdq-WF-oIK">
+                                <rect key="frame" x="37" y="84" width="300" height="249.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mcDonalds" translatesAutoresizingMaskIntoConstraints="NO" id="CpQ-8Q-QIl">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="Szo-IT-hDq"/>
+                                            <constraint firstAttribute="height" constant="200" id="erZ-xL-2ZP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juY-q6-65d">
+                                        <rect key="frame" x="126" y="200" width="48.5" height="31.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXt-TT-jzB">
+                                        <rect key="frame" x="135" y="231.5" width="30.5" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kdq-WF-oIK" firstAttribute="top" secondItem="hsq-vv-d3C" secondAttribute="top" constant="20" id="FMY-Ux-pQx"/>
+                            <constraint firstItem="Kdq-WF-oIK" firstAttribute="leading" secondItem="hsq-vv-d3C" secondAttribute="leading" constant="37" id="S0U-Kv-y6p"/>
+                            <constraint firstItem="hsq-vv-d3C" firstAttribute="trailing" secondItem="Kdq-WF-oIK" secondAttribute="trailing" constant="38" id="TPg-hH-CCP"/>
+                            <constraint firstItem="hsq-vv-d3C" firstAttribute="bottom" secondItem="Kdq-WF-oIK" secondAttribute="bottom" constant="333.5" id="cLc-5c-EC9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hsq-vv-d3C"/>
                     </view>
+                    <connections>
+                        <outlet property="restViewImage" destination="CpQ-8Q-QIl" id="sGf-LM-fug"/>
+                        <outlet property="restViewTitle" destination="juY-q6-65d" id="ecR-H1-hPo"/>
+                        <outlet property="restViewType" destination="uXt-TT-jzB" id="vmr-Hg-70O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5w-AB-M9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479" y="113"/>
+            <point key="canvasLocation" x="1477.5999999999999" y="112.89355322338831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dlr-zB-3c4">

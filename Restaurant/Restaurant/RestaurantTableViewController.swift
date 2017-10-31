@@ -10,10 +10,12 @@ import UIKit
 
 
 class RestaurantTableViewController: UITableViewController {
-    
+    //sets the data to be array of restmodels
+    var data: [RestaurantModel]?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //gives the data value from the data set
+        data = Data.sampleData
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -90,14 +92,27 @@ class RestaurantTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if let identifier = segue.identifier {
+            if identifier == "restaurantSegue" {
+                if let svc = segue.destination as? RestaurantViewController,
+                    let cell = sender as? UITableViewCell,
+                    let data = data{
+                    if let indexPath = tableView.indexPath(for: cell){
+                        let restaurant = data[indexPath.row]
+                        svc.restaurant = restaurant
+                    }
+                }
+            }
+        }
     }
-    */
+    
 
 }
