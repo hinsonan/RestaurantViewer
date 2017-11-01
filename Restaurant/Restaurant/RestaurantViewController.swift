@@ -10,6 +10,7 @@ import UIKit
 
 class RestaurantViewController: UIViewController {
 
+    @IBOutlet weak var restViewBody: UITextView!
     @IBOutlet weak var restViewImage: UIImageView!
     @IBOutlet weak var restViewTitle: UILabel!
     @IBOutlet weak var restViewType: UILabel!
@@ -21,6 +22,7 @@ class RestaurantViewController: UIViewController {
         
         restViewTitle.text = restaurant?.restuarantName
         restViewType.text = restaurant?.restuarantType
+        restViewBody.text = restaurant?.restuarantBodyText
         if let imageName = restaurant?.restuarantImage{
             restViewImage.image = UIImage(named:imageName )
         }

@@ -115,17 +115,29 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vd6-tz-JWW">
+                                <rect key="frame" x="37" y="351" width="300" height="260"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vd6-tz-JWW" firstAttribute="top" secondItem="Kdq-WF-oIK" secondAttribute="bottom" constant="17.5" id="7hu-s4-t78"/>
+                            <constraint firstItem="hsq-vv-d3C" firstAttribute="trailing" secondItem="vd6-tz-JWW" secondAttribute="trailing" constant="38" id="C3V-H8-54O"/>
                             <constraint firstItem="Kdq-WF-oIK" firstAttribute="top" secondItem="hsq-vv-d3C" secondAttribute="top" constant="20" id="FMY-Ux-pQx"/>
                             <constraint firstItem="Kdq-WF-oIK" firstAttribute="leading" secondItem="hsq-vv-d3C" secondAttribute="leading" constant="37" id="S0U-Kv-y6p"/>
                             <constraint firstItem="hsq-vv-d3C" firstAttribute="trailing" secondItem="Kdq-WF-oIK" secondAttribute="trailing" constant="38" id="TPg-hH-CCP"/>
                             <constraint firstItem="hsq-vv-d3C" firstAttribute="bottom" secondItem="Kdq-WF-oIK" secondAttribute="bottom" constant="333.5" id="cLc-5c-EC9"/>
+                            <constraint firstItem="vd6-tz-JWW" firstAttribute="leading" secondItem="hsq-vv-d3C" secondAttribute="leading" constant="37" id="vi6-5x-7AG"/>
+                            <constraint firstItem="hsq-vv-d3C" firstAttribute="bottom" secondItem="vd6-tz-JWW" secondAttribute="bottom" constant="56" id="xnE-Y3-8LL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hsq-vv-d3C"/>
                     </view>
                     <connections>
+                        <outlet property="restViewBody" destination="vd6-tz-JWW" id="Ctx-RW-YHo"/>
                         <outlet property="restViewImage" destination="CpQ-8Q-QIl" id="sGf-LM-fug"/>
                         <outlet property="restViewTitle" destination="juY-q6-65d" id="ecR-H1-hPo"/>
                         <outlet property="restViewType" destination="uXt-TT-jzB" id="vmr-Hg-70O"/>
