@@ -37,7 +37,7 @@ class RestaurantTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Data.sampleData.count
+        return data?.count ?? 0
     }
 
     
@@ -70,12 +70,16 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            Data.sampleData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.reloadData()
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+        }
+        
+    }*/
+    
 
     /*
     // Override to support rearranging the table view.

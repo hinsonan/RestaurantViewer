@@ -17,7 +17,8 @@ class RestaurantViewController: UIViewController {
     var restaurant: RestaurantModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
         
         restViewTitle.text = restaurant?.restuarantName
@@ -33,7 +34,7 @@ class RestaurantViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 
