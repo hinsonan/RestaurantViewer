@@ -12,16 +12,22 @@ import UIKit
 class RestaurantTableViewController: UITableViewController {
     //sets the data to be array of restmodels
     var data: [RestaurantModel]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         //gives the data value from the data set
         data = Data.sampleData
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
