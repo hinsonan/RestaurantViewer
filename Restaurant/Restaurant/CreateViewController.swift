@@ -35,9 +35,12 @@ class CreateViewController: UIViewController {
     
 
     @IBAction func addData(_ sender: UIButton) {
+        
         newRestuarantModel = RestaurantModel.init(restuarantName: (createName.text?.description)!, restuarantType: (createType.text?.description)!, restuarantImage: (createImage.text?.description)!, restuarantBodyText: (createBody.text?.description)!)
         
         Data.sampleData.append(newRestuarantModel!)
+        
+        
         
         
         

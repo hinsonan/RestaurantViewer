@@ -28,6 +28,13 @@ class RestaurantTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //let d = Data.sampleData
+        data = Data.sampleData
+
+        tableView.reloadData()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,7 +64,29 @@ class RestaurantTableViewController: UITableViewController {
             //you have to use indexPath to get the correct data for the row
             restCell.restName.text = Data.sampleData[indexPath.row].restuarantName
             restCell.restType.text = Data.sampleData[indexPath.row].restuarantType
-            restCell.restImage.image = UIImage(named: Data.sampleData[indexPath.row].restuarantImage!)
+            if let imageName = Data.sampleData[indexPath.row].restuarantImage {
+                restCell.restImage?.image = UIImage(named: imageName)
+            }
+            else {
+                restCell.restImage.image = nil
+            }
+            
+            //sets up image urls in the home page
+            if let imageURL = Data.sampleData[indexPath.row].restuarantImgURL{
+                let session = URLSession(configuration: .default)
+                if let url = URL(string: imageURL){
+                    let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
+                        if let data = data{
+                            DispatchQueue.main.async {
+                                restCell.restImage.image = UIImage(data: data)
+                            }
+                            
+                            
+                        }
+                    })
+                    task.resume()
+                }
+            }
         }
         return cell
     }
@@ -120,6 +149,9 @@ class RestaurantTableViewController: UITableViewController {
                         svc.restaurant = restaurant
                     }
                 }
+            }
+            else {
+                print(identifier)
             }
         }
     }

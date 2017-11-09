@@ -14,6 +14,7 @@ class RestaurantModel{
     var restuarantType: String?
     var restuarantImage: String?
     var restuarantBodyText: String?
+    var restuarantImgURL: String?
     
     init (restuarantName: String, restuarantType: String, restuarantBodyText: String){
         self.restuarantName = restuarantName
@@ -24,5 +25,9 @@ class RestaurantModel{
     convenience init(restuarantName: String, restuarantType: String, restuarantImage: String, restuarantBodyText: String){
         self.init(restuarantName: restuarantName, restuarantType: restuarantType, restuarantBodyText: restuarantBodyText)
         self.restuarantImage = restuarantImage
+    }
+    convenience init(restuarantName: String, restuarantType: String, restuarantImgURL: String, restuarantBodyText: String){
+        self.init(restuarantName: restuarantName, restuarantType: restuarantType, restuarantBodyText: restuarantBodyText)
+        self.restuarantImgURL = restuarantImgURL
     }
 }
