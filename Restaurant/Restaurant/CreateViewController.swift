@@ -33,10 +33,26 @@ class CreateViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func verifyUrl(urlString: String?) -> Bool {
+        if let urlString = urlString {
+            if let url = URL(string: urlString) {
+                return UIApplication.shared.canOpenURL(url)
+            }
+        }
+        return false
+    }
+
 
     @IBAction func addData(_ sender: UIButton) {
+        var isURL = verifyUrl(urlString: createImage.text)
         
-        newRestuarantModel = RestaurantModel.init(restuarantName: (createName.text?.description)!, restuarantType: (createType.text?.description)!, restuarantImage: (createImage.text?.description)!, restuarantBodyText: (createBody.text?.description)!)
+        if isURL{
+            newRestuarantModel = RestaurantModel.init(restuarantName: (createName.text?.description)!, restuarantType: (createType.text?.description)!, restuarantImgURL: (createImage.text?.description)!, restuarantBodyText: (createBody.text?.description)!)
+        } else{
+            newRestuarantModel = RestaurantModel.init(restuarantName: (createName.text?.description)!, restuarantType: (createType.text?.description)!, restuarantImage: (createImage.text?.description)!, restuarantBodyText: (createBody.text?.description)!)
+        }
+        /*
+        newRestuarantModel = RestaurantModel.init(restuarantName: (createName.text?.description)!, restuarantType: (createType.text?.description)!, restuarantImage: (createImage.text?.description)!, restuarantBodyText: (createBody.text?.description)!)*/
         
         Data.sampleData.append(newRestuarantModel!)
         
